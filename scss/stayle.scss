@@ -1,0 +1,236 @@
+@import "setting.scss";
+
+body {
+  font-family: Roboto, sans-serif;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 30px;
+}
+
+.back-blue {
+  padding: 50px 100px;
+  margin: 0px;
+  max-width: none;
+  background: #26335d;
+}
+
+.black-a {
+  @include Text(12px, normal, 500, 1.2, center, $c-black);
+  text-decoration: none;
+}
+
+.hr-red {
+  width: 30%;
+  height: 2px;
+  border: none;
+  background: #e74040;
+}
+
+.header {
+  @include Flex(flex, center, space-between, row, 0);
+  .header-center {
+    @include Flex(flex, center, space-between, column, 0);
+    .ul-list {
+      @include Flex(flex, center, space-between, row, 20px);
+      list-style: none;
+      .li-a {
+        @include Text(20px, normal, 500, 1.2, center, $c-black);
+        text-decoration: none;
+      }
+    }
+  }
+
+  //___________________________________________BurGerMenu_______________
+  .Bgm {
+    display: none;
+  }
+  #menu {
+    z-index: 2;
+  }
+
+  #menu-bar {
+    width: 45px;
+    height: 40px;
+    margin: 30px 0 20px 20px;
+    cursor: pointer;
+  }
+
+  .bar {
+    height: 5px;
+    width: 100%;
+    background-color: #dc052d;
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+  .org {
+    background-color: #e73e0c;
+  }
+  .blue {
+    background-color: #33488f;
+  }
+  .blue-rg {
+    background: linear-gradient(90deg, #33488f, #e73e0c);
+  }
+
+  #bar1 {
+    transform: translateY(-4px);
+  }
+
+  #bar3 {
+    transform: translateY(4px);
+  }
+
+  .nav {
+    transition: 0.3s ease;
+    display: none;
+  }
+
+  .nav ul {
+    padding: 0 22px;
+  }
+
+  .nav li {
+    list-style: none;
+    padding: 12px 0;
+  }
+
+  .nav li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 1s;
+  }
+
+  .nav li a:hover {
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    transition: all 1s;
+    text-shadow: -5px 5px 5px;
+  }
+
+  .menu-bg,
+  #menu {
+    top: 0;
+    left: 100px;
+    position: absolute;
+  }
+
+  .menu-bg {
+    z-index: 1;
+    width: 0;
+    height: 0;
+    margin: 30px 0 20px 20px;
+    background: linear-gradient(90deg, #33498f81, #e73f0c87);
+    border-radius: 50%;
+    transition: 0.3s ease;
+    left: 100px;
+  }
+
+  .change {
+    display: block;
+  }
+
+  .change .bar {
+    background-color: white;
+  }
+
+  .change #bar1 {
+    transform: translateY(4px) rotateZ(-45deg);
+  }
+
+  .change #bar2 {
+    opacity: 0;
+  }
+
+  .change #bar3 {
+    transform: translateY(-6px) rotateZ(45deg);
+  }
+
+  .change-bg {
+    width: 600px;
+    height: 600px;
+    transform: translate(-60%, -30%);
+    background: linear-gradient(180deg, #33488f, #e73e0c);
+    left: 100px;
+  }
+  //___________________________________________Header-right
+  .header-right {
+    @include Flex(flex, start, center, column, 8px);
+    text-decoration: none;
+    .header-right-phone {
+      @include Text(12px, normal, 500, 1.2, center, $c-black);
+      text-decoration: none;
+      .black-a {
+        @include Text(12px, normal, 500, 1.2, center, $c-black);
+        text-decoration: none;
+      }
+    }
+    .header-right-adress {
+      @include Text(12px, normal, 500, 1.2, center, $c-black);
+      text-decoration: none;
+      .black-a {
+        @include Text(12px, normal, 500, 1.2, center, $c-black);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.main {
+  @include Flex(flex, center, space-between, row, 20px);
+  .main-left {
+    @include Flex(flex, center, center, column, 50px);
+    .main-left-texts {
+      @include Flex(flex, start, center, column, 20px);
+      .main-left-text-h1-wh {
+        @include Text(32px, normal, 700, 1.2, start, $c-white);
+      }
+      .main-left-text-p-wh {
+        @include Text(24px, normal, 700, 1.2, start, $c-white);
+      }
+    }
+    .main-left-img {
+      @include Flex(flex, center, center, column, 0);
+    }
+  }
+  .main-right {
+    @include Flex(flex, center, center, column, 50px);
+    .main-right-img {
+      @include Flex(flex, center, center, column, 0);
+      position: relative;
+      .main-img-absolute {
+        position: absolute;
+        bottom: -20px;
+        left: -130px;
+      }
+    }
+  }
+}
+
+.card-container {
+  @include Flex(grid, center, center, row, 20px);
+  grid-template-columns: repeat(6, 1fr);
+  margin: 80px 0px;
+  .card {
+    @include Flex(flex, center, center, column, 20px);
+    height: 100%;
+    box-shadow: 2px 5px 10px 1px gray;
+    position: relative;
+    border-radius: 10px;
+    padding: 20px 20px 50px 20px;
+    .gray {
+      color: gray;
+      font-size: 14px;
+    }
+  }
+}
+
+.bodyHidden {
+  overflow: hidden;
+}
+
+@import "media.scss";
